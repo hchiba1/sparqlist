@@ -21,7 +21,7 @@
           <FaIcon @icon="spinner" @pulse={{true}} @size="lg" />
         {{else}}
           <button type="submit" class="btn btn-primary mr-2" disabled={{this.execute.isRunning}}>
-          Run
+          <FaIcon @icon="play" />
           </button>
         {{/if}}
       </div>

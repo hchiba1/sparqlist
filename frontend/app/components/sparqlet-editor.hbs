@@ -4,6 +4,9 @@
   </div>
 {{/each}}
 
+<p>
+  <a href="/{{@model.id}}"><strong>{{@model.id}}</strong></a>
+</p>
 <div class="card mt-1">
   <form {{on "submit" (prevent-default this.save)}}>
     <div class="card-header d-flex align-items-center">

@@ -2,9 +2,8 @@
   <CollectionSearch @collection={{@model}} @keys={{array "id" "src"}} as |search|>
     <div class="card-header d-flex">
       <input {{on "input" search.update}} type="search" placeholder="Search" class="form-control mr-auto">
-
       <LinkTo @route="sparqlets.new" @query={{hash forkFrom=null}} class="btn btn-primary">
-        <FaIcon @icon="edit" /> New
+        <FaIcon @icon="plus" />
       </LinkTo>
     </div>
 

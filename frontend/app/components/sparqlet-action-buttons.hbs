@@ -1,10 +1,17 @@
 {{#if this.session.isAuthenticated}}
-  <div>
+  <div class="mr-auto">
 
     <LinkTo @route="sparqlets.edit" @model={{@model}} class="btn btn-outline-primary" @role="button">
       <FaIcon @icon="edit" />
     </LinkTo>
+  </div>
+{{/if}}
 
+  <div class="mr-3">
+    <small class="text-muted">Last update: {{@model.mtime}}</small>
+  </div>
+{{#if this.session.isAuthenticated}}
+  <div>
     <button {{on "click" this.delete}} type="button" class="btn btn-outline-danger">
       <FaIcon @icon="trash" />
     </button>

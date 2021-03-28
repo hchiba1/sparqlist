@@ -9,14 +9,6 @@
       <SparqletActionButtons @model={{@model}} />
     </div>
 
-    <ul class="nav nav-tabs card-header-tabs mt-2">
-      <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#html">HTML</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#markdown">{{@model.mdPath}}</a>
-      </li>
-    </ul>
   </div>
 
   <div class="card-body tab-content">
@@ -25,8 +17,5 @@
       {{{@model.html}}}
     </div>
 
-    <div class="tab-pane" id="markdown">
-      <pre><code>{{@model.src}}</code></pre>
-    </div>
   </div>
 </div>
