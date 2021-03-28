@@ -1,11 +1,11 @@
 <div class="card">
   <CollectionSearch @collection={{@model}} @keys={{array "id" "src"}} as |search|>
     <div class="card-header d-flex">
-      <LinkTo @route="sparqlets.new" @query={{hash forkFrom=null}} class="btn btn-primary mr-auto">
-        <FaIcon @icon="plus-circle" /> New SPARQLet
-      </LinkTo>
+      <input {{on "input" search.update}} type="search" placeholder="Search" class="form-control mr-auto">
 
-      <input {{on "input" search.update}} type="search" placeholder="Search" class="form-control">
+      <LinkTo @route="sparqlets.new" @query={{hash forkFrom=null}} class="btn btn-primary">
+        <FaIcon @icon="edit" /> New
+      </LinkTo>
     </div>
 
     <div class="list-group list-group-flush">

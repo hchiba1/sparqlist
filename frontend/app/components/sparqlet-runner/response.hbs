@@ -1,16 +1,12 @@
 {{#if @response.ok}}
-  <h4>
-    Response
-    <span class="badge badge-success align-top">{{@response.status}} {{@response.statusText}}</span>
-  </h4>
 
   <div class="card mt-3">
     <div class="card-header">
-      Output
 
+      Response:
+      <span class="badge badge-success">{{@response.status}} {{@response.statusText}}</span>
       {{#if @response.contentType}}
         <span class="text-muted">
-          <span class="mx-1">:</span>
           <small class="text-monospace">{{@response.contentType}}</small>
         </span>
       {{/if}}
@@ -30,14 +26,10 @@
     </div>
   </div>
 {{else}}
-  <h4>
-    Response
-    <span class="badge badge-danger align-top">{{@response.status}} {{@response.statusText}}</span>
-  </h4>
-
   <div class="card border-danger mt-3">
     <div class="card-header">
-      Error
+      Error:
+      <span class="badge badge-danger">{{@response.status}} {{@response.statusText}}</span>
     </div>
 
     <div class="card-body">
