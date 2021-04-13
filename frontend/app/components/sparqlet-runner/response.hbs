@@ -1,17 +1,29 @@
 {{#if @response.ok}}
 
+<div class="response">
   <div class="card mt-3">
-    <div class="card-header">
+    <a class="card-header text-decoration-none text-dark d-flex align-items-center" data-target="#response_1" data-toggle="collapse">
+      <div>
+        <FaIcon @icon="chevron-right" @fixedWidth={{true}} />
+        <FaIcon @icon="chevron-down" @fixedWidth={{true}} />
+      </div>
 
-      Response:
+      <div class="px-2">
+      Response
+      </div>
+      <div class="mr-auto">
       <span class="badge badge-success">{{@response.status}} {{@response.statusText}}</span>
+      </div>
+      <div>
       {{#if @response.contentType}}
         <span class="text-muted">
-          <small class="text-monospace">{{@response.contentType}}</small>
+          <small class="text-monospace mx-1">{{@response.contentType}}</small>
         </span>
       {{/if}}
-    </div>
+      </div>
+    </a>
 
+    <div class="collapse show" id="response_1">
     <div class="card-body">
       {{#if (type-is @response.contentType (array "text/html"))}}
         <div {{evaluate-scripts}}>
@@ -24,7 +36,10 @@
         <pre><code>{{@response.results}}</code></pre>
       {{/if}}
     </div>
+    </div>
+
   </div>
+</div>
 {{else}}
   <div class="card border-danger mt-3">
     <div class="card-header">
